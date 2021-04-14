@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30320.27
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InvitationConsoleApp", "InvitationConsoleApp\InvitationConsoleApp.csproj", "{E0D73FDD-158A-4C2E-AA03-15CDB979C02F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E0D73FDD-158A-4C2E-AA03-15CDB979C02F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E0D73FDD-158A-4C2E-AA03-15CDB979C02F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E0D73FDD-158A-4C2E-AA03-15CDB979C02F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E0D73FDD-158A-4C2E-AA03-15CDB979C02F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5282438B-FF23-4AAF-A3AD-56265B3266AF}
+	EndGlobalSection
+EndGlobal

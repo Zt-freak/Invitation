@@ -1,0 +1,13 @@
+C:\Users\bnkho\source\repos\InvitationSolution\InvitationConsoleApp\bin\Debug\netcoreapp3.1\InvitationConsoleApp.exe
+C:\Users\bnkho\source\repos\InvitationSolution\InvitationConsoleApp\bin\Debug\netcoreapp3.1\InvitationConsoleApp.deps.json
+C:\Users\bnkho\source\repos\InvitationSolution\InvitationConsoleApp\bin\Debug\netcoreapp3.1\InvitationConsoleApp.runtimeconfig.json
+C:\Users\bnkho\source\repos\InvitationSolution\InvitationConsoleApp\bin\Debug\netcoreapp3.1\InvitationConsoleApp.runtimeconfig.dev.json
+C:\Users\bnkho\source\repos\InvitationSolution\InvitationConsoleApp\bin\Debug\netcoreapp3.1\InvitationConsoleApp.dll
+C:\Users\bnkho\source\repos\InvitationSolution\InvitationConsoleApp\bin\Debug\netcoreapp3.1\InvitationConsoleApp.pdb
+C:\Users\bnkho\source\repos\InvitationSolution\InvitationConsoleApp\obj\Debug\netcoreapp3.1\InvitationConsoleApp.AssemblyInfoInputs.cache
+C:\Users\bnkho\source\repos\InvitationSolution\InvitationConsoleApp\obj\Debug\netcoreapp3.1\InvitationConsoleApp.AssemblyInfo.cs
+C:\Users\bnkho\source\repos\InvitationSolution\InvitationConsoleApp\obj\Debug\netcoreapp3.1\InvitationConsoleApp.csproj.CoreCompileInputs.cache
+C:\Users\bnkho\source\repos\InvitationSolution\InvitationConsoleApp\obj\Debug\netcoreapp3.1\InvitationConsoleApp.dll
+C:\Users\bnkho\source\repos\InvitationSolution\InvitationConsoleApp\obj\Debug\netcoreapp3.1\InvitationConsoleApp.pdb
+C:\Users\bnkho\source\repos\InvitationSolution\InvitationConsoleApp\obj\Debug\netcoreapp3.1\InvitationConsoleApp.genruntimeconfig.cache
+C:\Users\bnkho\source\repos\InvitationSolution\InvitationConsoleApp\obj\Debug\netcoreapp3.1\InvitationConsoleApp.csprojAssemblyReference.cache
