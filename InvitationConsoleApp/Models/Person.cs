@@ -1,13 +1,22 @@
 ﻿namespace InvitationConsoleApp.Models
 {
-    internal class Person
+    internal abstract class Person
     {
-        private string name;
-        public string Name
+        private string firstName;
+        public string FirstName
         {
-            get { return name; }
-            set { name = value; }
+            get { return firstName; }
+            set { firstName = value; }
+        }
+        public string Surname { get; set; }
+        public string SurnamePrefix { get; set; }
+        public Honorifics Honorific {get; set;}
+        public virtual string FullName {
+            get {
+                return $"{FirstName} {SurnamePrefix} {Surname}";
+            }
         }
         public string Email { get; set; }
+        public string PhoneNumber { get; set; }
     }
 }

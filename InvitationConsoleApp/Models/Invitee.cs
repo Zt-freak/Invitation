@@ -12,5 +12,13 @@ namespace InvitationConsoleApp.Models
             get { return canAttend; }
             set { canAttend = value; }
         }
+
+        public override string FullName
+        {
+            get
+            {
+                return $"{Honorific.ToString()} {Surname}, {FirstName} {SurnamePrefix}";
+            }
+        }
     }
 }

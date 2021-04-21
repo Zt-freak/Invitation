@@ -9,8 +9,17 @@ namespace InvitationConsoleApp
     {
         static void Main(string[] args)
         {
+
+            var sendOr = ContactMethod.Email | ContactMethod.WhatsApp;
+            Console.WriteLine((int)sendOr);
+
+            var sendAnd = ContactMethod.Email & ContactMethod.WhatsApp;
+            Console.WriteLine((int)sendAnd);
+
             Organizer eventOrganizer = new Organizer();
-            eventOrganizer.Name = GetUserInput("de naam van de organisator");
+            eventOrganizer.FirstName = GetUserInput("de voornaam van de organisator");
+            eventOrganizer.SurnamePrefix = GetUserInput("de tussenvoegsels van de organisator", false);
+            eventOrganizer.Surname = GetUserInput("de achternaam van de organisator");
             eventOrganizer.Email = GetUserInput("het e-mailadres van de organisator");
 
             InvitationEvent inviteEvent = new InvitationEvent();
@@ -23,14 +32,17 @@ namespace InvitationConsoleApp
             do
             {
                 tempInvitee = new Invitee();
-                tempInvitee.Name = GetUserInput("de naam van de genodigde (<ENTER> om te beëindigen)", false, "string");
-                if (!string.IsNullOrWhiteSpace(tempInvitee.Name))
+                tempInvitee.FirstName = GetUserInput("de naam van de genodigde (<ENTER> om te beëindigen)", false, "string");
+                if (!string.IsNullOrWhiteSpace(tempInvitee.FirstName))
                 {
+                    tempInvitee.SurnamePrefix = GetUserInput("de tussenvoegsels van de genodigde", false);
+                    tempInvitee.Surname = GetUserInput("de achternaam van de genodigde");
+                    tempInvitee.Honorific = GetUserInput("de aanhef van de genodigde", "honorific");
                     tempInvitee.Email = GetUserInput("het e-mailadres van de genodigde");
                     inviteEvent.invitees.Add(tempInvitee);
                 }
             }
-            while (!string.IsNullOrWhiteSpace(tempInvitee.Name));
+            while (!string.IsNullOrWhiteSpace(tempInvitee.FirstName));
 
             StringBuilder EventDetailsStringBuilder = new StringBuilder();
             EventDetailsStringBuilder.Append("De activiteit ");
@@ -38,7 +50,7 @@ namespace InvitationConsoleApp
             EventDetailsStringBuilder.Append(", op ");
             EventDetailsStringBuilder.Append(inviteEvent.Date.ToString("yyyy-MM-dd"));
             EventDetailsStringBuilder.Append(", wordt georganiseerd door ");
-            EventDetailsStringBuilder.Append(eventOrganizer.Name);
+            EventDetailsStringBuilder.Append(eventOrganizer.FullName);
             EventDetailsStringBuilder.Append(" met het e-mailadres ");
             EventDetailsStringBuilder.Append(eventOrganizer.Email);
 
@@ -51,7 +63,7 @@ namespace InvitationConsoleApp
 
             for (int i = 0; i < inviteEvent.invitees.Count; i++)
             {
-                Console.WriteLine($"naam van genodigde {i + 1}/{inviteEvent.invitees.Count}: {inviteEvent.invitees[i].Name}");
+                Console.WriteLine($"naam van genodigde {i + 1}/{inviteEvent.invitees.Count}: {inviteEvent.invitees[i].FullName}");
                 Console.WriteLine($"email van genodigde {i + 1}/{inviteEvent.invitees.Count}: {inviteEvent.invitees[i].Email}");
             }
 
@@ -101,6 +113,11 @@ namespace InvitationConsoleApp
                         DateTime tempDate;
                         parseSuccess = DateTime.TryParse(input, out tempDate);
                         output = tempDate;
+                        break;
+                    case "honorific":
+                        Honorifics tempHonorific;
+                        parseSuccess = Enum.TryParse(input, out tempHonorific);
+                        output = tempHonorific;
                         break;
                     case "string":
                     default:
