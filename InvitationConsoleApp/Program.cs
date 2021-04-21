@@ -38,7 +38,21 @@ namespace InvitationConsoleApp
                     tempInvitee.SurnamePrefix = GetUserInput("de tussenvoegsels van de genodigde", false);
                     tempInvitee.Surname = GetUserInput("de achternaam van de genodigde");
                     tempInvitee.Honorific = GetUserInput("de aanhef van de genodigde", "honorific");
-                    tempInvitee.Email = GetUserInput("het e-mailadres van de genodigde");
+                    ContactMethod contactMethod = GetUserInput("De contactmethode voor de genodigde", "contact");
+                    switch(contactMethod)
+                    {
+                        case ContactMethod.Email:
+                            tempInvitee.Email = GetUserInput("het e-mailadres van de genodigde");
+                            break;
+                        case ContactMethod.Mail:
+                            break;
+                        case ContactMethod.Phone:
+                            tempInvitee.PhoneNumber = GetUserInput("het telefoonnummer van de genodigde");
+                            break;
+                        case ContactMethod.WhatsApp:
+                            tempInvitee.PhoneNumber = GetUserInput("het telefoonnummer van de genodigde");
+                            break;
+                    }
                     inviteEvent.invitees.Add(tempInvitee);
                 }
             }
@@ -118,6 +132,11 @@ namespace InvitationConsoleApp
                         Honorifics tempHonorific;
                         parseSuccess = Enum.TryParse(input, out tempHonorific);
                         output = tempHonorific;
+                        break;
+                    case "contact":
+                        ContactMethod tempContactMethod;
+                        parseSuccess = Enum.TryParse(input, out tempContactMethod);
+                        output = tempContactMethod;
                         break;
                     case "string":
                     default:
