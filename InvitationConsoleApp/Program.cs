@@ -26,7 +26,7 @@ namespace InvitationConsoleApp
             inviteEvent.Date = GetUserInput("de datum van het evenement", "date");
             inviteEvent.Title = GetUserInput("de naam van het evenement");
             inviteEvent.Description = GetUserInput("de beschrijving van het evenement", false);
-            inviteEvent.invitees = new List<Invitee>();
+            inviteEvent.Invitees = new List<Invitee>();
 
             Invitee tempInvitee;
             do
@@ -54,7 +54,7 @@ namespace InvitationConsoleApp
                             tempInvitee.PhoneNumber = GetUserInput("het telefoonnummer van de genodigde");
                             break;
                     }
-                    inviteEvent.invitees.Add(tempInvitee);
+                    inviteEvent.Invitees.Add(tempInvitee);
                 }
             }
             while (!string.IsNullOrWhiteSpace(tempInvitee.FirstName));
@@ -76,10 +76,10 @@ namespace InvitationConsoleApp
                 Console.WriteLine($"De beschrijving van het evenement is: {inviteEvent.Description}\n");
             }
 
-            for (int i = 0; i < inviteEvent.invitees.Count; i++)
+            for (int i = 0; i < inviteEvent.Invitees.Count; i++)
             {
-                Console.WriteLine($"naam van genodigde {i + 1}/{inviteEvent.invitees.Count}: {inviteEvent.invitees[i].FullName}");
-                Console.WriteLine($"email van genodigde {i + 1}/{inviteEvent.invitees.Count}: {inviteEvent.invitees[i].Email}");
+                Console.WriteLine($"naam van genodigde {i + 1}/{inviteEvent.Invitees.Count}: {inviteEvent.Invitees[i].FullName}");
+                Console.WriteLine($"email van genodigde {i + 1}/{inviteEvent.Invitees.Count}: {inviteEvent.Invitees[i].Email}");
             }
 
             Console.WriteLine("Press <ENTER> to exit.");
