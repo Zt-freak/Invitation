@@ -37,8 +37,9 @@ namespace InvitationConsoleApp
                 {
                     tempInvitee.SurnamePrefix = GetUserInput("de tussenvoegsels van de genodigde", false);
                     tempInvitee.Surname = GetUserInput("de achternaam van de genodigde");
-                    tempInvitee.Honorific = GetUserInput("de aanhef van de genodigde", "honorific");
-                    ContactMethod contactMethod = GetUserInput("De contactmethode voor de genodigde", "contact");
+                    tempInvitee.Gender = GetUserInput("het gender van de genodigde", "gender");
+                    //tempInvitee.Honorific = GetUserInput("de aanhef van de genodigde", "honorific");
+                    ContactMethod contactMethod = GetUserInput("de contactmethode voor de genodigde", "contact");
                     switch(contactMethod)
                     {
                         case ContactMethod.Email:
@@ -127,6 +128,11 @@ namespace InvitationConsoleApp
                         DateTime tempDate;
                         parseSuccess = DateTime.TryParse(input, out tempDate);
                         output = tempDate;
+                        break;
+                    case "gender":
+                        Genders tempGender;
+                        parseSuccess = Enum.TryParse(input, out tempGender);
+                        output = tempGender;
                         break;
                     case "honorific":
                         Honorifics tempHonorific;

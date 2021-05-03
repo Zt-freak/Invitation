@@ -4,7 +4,7 @@ using System.Text;
 
 namespace InvitationConsoleApp.Models
 {
-    class Organizer : Person
+    internal class Organizer : Person
     {
 
     }

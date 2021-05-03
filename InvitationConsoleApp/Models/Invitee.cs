@@ -4,7 +4,7 @@ using System.Text;
 
 namespace InvitationConsoleApp.Models
 {
-    class Invitee : Person
+    internal class Invitee : Person
     {
         private bool canAttend;
         public bool CanAttend
@@ -17,7 +17,20 @@ namespace InvitationConsoleApp.Models
         {
             get
             {
-                return $"{Honorific.ToString()} {Surname}, {FirstName} {SurnamePrefix}";
+                return $"{getHonorific()} {Surname}, {FirstName} {SurnamePrefix}";
+            }
+        }
+
+        public string getHonorific ()
+        {
+            switch (Gender)
+            {
+                case Genders.Male:
+                    return "Sir";
+                case Genders.Female:
+                    return "Madame";
+                default:
+                    return "Sir/Madame";
             }
         }
     }
