@@ -12,6 +12,10 @@ namespace InvitationConsoleApp.Models
         public List<Invitee> Invitees { get; set; }
         public List<Organizer> Organizers { get; set; }
 
+        public InvitationEvent ()
+        {
+
+        }
         public InvitationEvent (Organizer organizer)
         {
             Organizers = new List<Organizer>
